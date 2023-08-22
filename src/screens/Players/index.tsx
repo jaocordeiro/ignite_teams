@@ -11,10 +11,11 @@ import { Filter } from '@components/Filter'
 import { Highlight } from '@components/Highlight';
 import { ButtonIcon } from '@components/ButtonIcon';
 import { Input } from '@components/Input';
+import { PlayerCard } from '@components/PlayerCard';
 
 export function Players() {
   const [team, setTeam] = useState('')
-  const [players, setPlayers] = useState([])
+  const [players, setPlayers] = useState(['teste', 'banana'])
 
   return (
     <Container>
@@ -32,7 +33,7 @@ export function Players() {
           placeholder='Nome da pessoa'
           autoCorrect={false}
         />
-        <ButtonIcon icon='add' type='PRIMARY' />
+        <ButtonIcon icon='add' color='PRIMARY' />
       </Form>
 
       <HeaderList>
@@ -53,6 +54,16 @@ export function Players() {
         </NumberOfPlayers>
       </HeaderList>
 
+      <FlatList
+        data={players}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <PlayerCard
+            name={item}
+            onRemove={() => { }}
+          />
+        )}
+      />
     </Container>
   )
 }

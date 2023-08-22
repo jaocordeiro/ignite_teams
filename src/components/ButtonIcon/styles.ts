@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 export type ButtonIconTypeStyleProps = 'PRIMARY' | 'SECONDARY';
 
 type Props = {
-  type: ButtonIconTypeStyleProps;
+  color: ButtonIconTypeStyleProps;
 }
 
 export const Container = styled(TouchableOpacity)`
@@ -16,7 +16,7 @@ export const Container = styled(TouchableOpacity)`
   margin-left: 12px;
 `;
 
-export const Icon = styled(MaterialIcons).attrs(({ theme, type }: Props) => ({
+export const Icon = styled(MaterialIcons).attrs(({ theme, color }: Props) => ({
   size: 24,
-  color: type === 'PRIMARY' ? theme.COLORS.GREEN_700 : theme.COLORS.RED
+  color: color === 'PRIMARY' ? theme.COLORS.GREEN_700 : theme.COLORS.RED
 }))``;
