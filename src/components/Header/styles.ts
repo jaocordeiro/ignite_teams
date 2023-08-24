@@ -11,11 +11,9 @@ export const Container = styled.View`
 export const Logo = styled.Image`
   width: 46px;
   height: 55px;
-  top: 8%;
 `;
 
 export const BackButton = styled.TouchableOpacity`
-  top: 8%;
   flex: 1;
 `;
 
